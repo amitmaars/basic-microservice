@@ -1,0 +1,38 @@
+version: '3'
+services:
+    microservice1: 
+        image: "node:8.9.1"
+        container_name: micro-services-1
+        working_dir: /home/node/app
+        volumes:
+          - ./ms1:/home/node/app
+        ports:
+          - 6001:3000
+        command:
+           - /bin/bash
+           - -c
+           - npm start
+    microservice2: 
+        image: "node:8.9.1"
+        container_name: micro-services-2
+        working_dir: /home/node/app
+        volumes:
+          - ./ms2:/home/node/app
+        ports:
+          - 6002:3000
+        command:
+           - /bin/bash
+           - -c
+           - npm start
+    microservice3: 
+        image: "node:8.9.1"
+        container_name: micro-services-3
+        working_dir: /home/node/app
+        volumes:
+          - ./ms3:/home/node/app
+        ports:
+          - 6003:3000
+        command:
+           - /bin/bash
+           - -c
+           - npm start
